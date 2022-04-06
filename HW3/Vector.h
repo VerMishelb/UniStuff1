@@ -4,28 +4,27 @@
 #include <iostream>
 
 class Vector {
-private:
-	double i = 0, j = 0;
-
 public:
-	Vector();
-	Vector(double i);
-	Vector(double i, double j);
-	explicit Vector(const Vector& other) = default;
-	~Vector();
+    Vector();
+    Vector(double i);
+    Vector(double i, double j);
+    Vector(double i, double j, double k);
+    explicit Vector(const Vector& other) = default;
+    ~Vector();
 
-	double getLength();
-	void normalize();
-	double setij(double i, double j);
+    double getLength() const;
+    void normalize();
 
-	const Vector operator+(const Vector& other) const;
-	const Vector operator-(const Vector& other) const;
-	const Vector operator*(const Vector& other) const;
-	const Vector operator*(const double& other) const;//Скалярное произведение
-	const Vector operator/(const Vector& other) const;
-	const bool operator>(const Vector& other) const;
-	const bool operator<(const Vector& other) const;
-	friend std::ostream& operator<<(std::ostream& out, const Vector& val);
+    const Vector& operator+(const Vector& other) const;
+    const Vector& operator-(const Vector& other) const;
+    const Vector& operator*(const Vector& other) const;
+    const Vector& operator*(const double& other) const;
+    friend const double operator*(const Vector& left, const Vector& right);//скалярное
+    const Vector& operator/(const double& other) const;
+    const bool& operator>(const Vector& other) const;
+    const bool& operator<(const Vector& other) const;
+    friend std::ostream& operator<<(std::ostream& out, const Vector& val);
+    double i = 0, j = 0, k = 0;
 };
 
 #endif
