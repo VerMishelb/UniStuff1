@@ -5,8 +5,10 @@ static class Equation {
 public:
 	void solve(double a = 4.6, double b = 1.5);
 private:
+	double solveY();
 	double solveY1();
 	double solveY2();
+	double solveX();
 	double solveT1();
 	double solveT2();
 	double solveT3();
