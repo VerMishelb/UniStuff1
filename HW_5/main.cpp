@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 
-#define RAND_RANGE(from, to) (rand() % (to - from) + from)
+#define RAND_RANGE(from, to) (rand() % (to + 1 - from) + from)
 
 void fillMatrixRand(int*** arr, int h, int w) {
 	srand(time(nullptr));
