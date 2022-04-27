@@ -15,7 +15,7 @@ Complex::Complex(Complex&& other) noexcept : re(0), im(0) {
     re = std::move(other.re);
     im = std::move(other.im);
 }
-Complex::~Complex() { /* Нечего удалять */ printf_s("destructor\n"); }
+Complex::~Complex() { /* РќРµС‡РµРіРѕ СѓРґР°Р»СЏС‚СЊ */ printf_s("destructor\n"); }
 
 void Complex::display() const {
     std::ios_base::fmtflags old_flags = std::cout.flags();
@@ -49,19 +49,19 @@ Complex Complex::getMultiplied(const Complex& val) {
 }
 
 
-const Complex& Complex::operator+(const Complex& n2) const {
+const Complex Complex::operator+(const Complex& n2) const {
     return Complex(re + n2.re, im + n2.im);
 }
-const Complex& Complex::operator-(const Complex& n2) const {
+const Complex Complex::operator-(const Complex& n2) const {
     return Complex(re - n2.re, im - n2.im);
 }
-const Complex& Complex::operator*(const Complex& n2) const {
+const Complex Complex::operator*(const Complex& n2) const {
     return Complex(
         re * n2.re - im * n2.im,
         re * n2.im + n2.re * im
     );
 }
-const Complex& Complex::operator/(const Complex& n2) const {
+const Complex Complex::operator/(const Complex& n2) const {
     return Complex(
         (re * n2.re + im * n2.im) / (n2.re * n2.re + n2.im * n2.im),
         (n2.re * im - re * n2.im) / (n2.re * n2.re + n2.im * n2.im)

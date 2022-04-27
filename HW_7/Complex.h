@@ -20,10 +20,10 @@ struct Complex {
     void setIm(const double& val);
     static Complex getMultiplied(const Complex& val);
 
-    const Complex& operator+(const Complex& n2) const;
-    const Complex& operator-(const Complex& n2) const;
-    const Complex& operator*(const Complex& n2) const;
-    const Complex& operator/(const Complex& n2) const;
+    const Complex operator+(const Complex& n2) const;
+    const Complex operator-(const Complex& n2) const;
+    const Complex operator*(const Complex& n2) const;
+    const Complex operator/(const Complex& n2) const;
     bool operator>(const Complex& n2) const;
     bool operator<(const Complex& n2) const;
     friend std::ostream& operator<<(std::ostream& out, const Complex& val);
