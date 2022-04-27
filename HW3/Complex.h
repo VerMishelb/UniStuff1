@@ -15,12 +15,12 @@ struct Complex {
     double getIm();
     void setIm(const double& val);
 
-    const Complex& operator+(const Complex& n2) const;
-    const Complex& operator-(const Complex& n2) const;
-    const Complex& operator*(const Complex& n2) const;
-    const Complex& operator/(const Complex& n2) const;
-    const bool& operator>(const Complex& n2) const;
-    const bool& operator<(const Complex& n2) const;
+    const Complex operator+(const Complex& n2) const;
+    const Complex operator-(const Complex& n2) const;
+    const Complex operator*(const Complex& n2) const;
+    const Complex operator/(const Complex& n2) const;
+    bool operator>(const Complex& n2) const;
+    bool operator<(const Complex& n2) const;
     friend std::ostream& operator<<(std::ostream& out, const Complex& val);
 
     double im = 0, re = 0;

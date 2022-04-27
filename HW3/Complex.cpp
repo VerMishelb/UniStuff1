@@ -32,28 +32,28 @@ void Complex::setIm(const double& val) {
 }
 
 
-const Complex& Complex::operator+(const Complex& n2) const {
+const Complex Complex::operator+(const Complex& n2) const {
     return Complex(re + n2.re, im + n2.im);
 }
-const Complex& Complex::operator-(const Complex& n2) const {
+const Complex Complex::operator-(const Complex& n2) const {
     return Complex(re - n2.re, im - n2.im);
 }
-const Complex& Complex::operator*(const Complex& n2) const {
+const Complex Complex::operator*(const Complex& n2) const {
     return Complex(
         re * n2.re - im * n2.im,
         re * n2.im + n2.re * im
     );
 }
-const Complex& Complex::operator/(const Complex& n2) const {
+const Complex Complex::operator/(const Complex& n2) const {
     return Complex(
         (re * n2.re + im * n2.im) / (n2.re * n2.re + n2.im * n2.im),
         (n2.re * im - re * n2.im) / (n2.re * n2.re + n2.im * n2.im)
     );
 }
-const bool& Complex::operator>(const Complex& n2) const {
+bool Complex::operator>(const Complex& n2) const {
     return n2 < *this;
 }
-const bool& Complex::operator<(const Complex& n2) const {
+bool Complex::operator<(const Complex& n2) const {
     return Length() < n2.Length();
 }
 std::ostream& operator<<(std::ostream& out, const Complex& val) {

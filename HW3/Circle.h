@@ -10,15 +10,15 @@ private:
 public:
     Circle();
     Circle(const double& r);
-    explicit Circle(const Circle& other);
+    Circle(const Circle& other);
     ~Circle();
     
-    const Circle& operator+(const Circle& other) const;
-    const Circle& operator-(const Circle& other) const;
+    const Circle operator+(const Circle& other) const;
+    const Circle operator-(const Circle& other) const;
     Circle& operator=(const double& other);
     Circle& operator=(const Circle& other) = default;
-    const bool& operator>(const Circle& other) const;
-    const bool& operator<(const Circle& other) const;
+    bool operator>(const Circle& other) const;
+    bool operator<(const Circle& other) const;
     operator double() const;
     friend std::ostream& operator<<(std::ostream& out, const Circle& val);
 

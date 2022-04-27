@@ -17,13 +17,13 @@ void Vector::normalize() {
 	j /= l;
 }
 
-const Vector& Vector::operator+(const Vector& other) const {
+const Vector Vector::operator+(const Vector& other) const {
 	return Vector(i + other.i, j + other.j, k + other.k);
 }
-const Vector& Vector::operator-(const Vector& other) const {
+const Vector Vector::operator-(const Vector& other) const {
 	return Vector(i - other.i, j - other.j, k - other.k);
 }
-const Vector& Vector::operator*(const Vector& other) const {
+const Vector Vector::operator*(const Vector& other) const {
 	return Vector(
 		this->j * other.k - this->k * other.j,//определитель
 		this->k * other.i - this->i * other.k,
@@ -32,16 +32,16 @@ const Vector& Vector::operator*(const Vector& other) const {
 const double operator*(const Vector& left, const Vector& right) {//скалярное
 	return left.i * right.i + left.j * right.j + left.k * right.k;
 }
-const Vector& Vector::operator*(const double& other) const {
+const Vector Vector::operator*(const double& other) const {
 	return Vector(i * other, j * other, k * other);
 }
-const Vector& Vector::operator/(const double& other) const {
+const Vector Vector::operator/(const double& other) const {
 	return Vector(i / other, j / other, k / other);
 }
-const bool& Vector::operator>(const Vector& other) const {
+bool Vector::operator>(const Vector& other) const {
 	return other < *this;
 }
-const bool& Vector::operator<(const Vector& other) const {
+bool Vector::operator<(const Vector& other) const {
 	return getLength() < other.getLength();
 }
 std::ostream& operator<<(std::ostream& out, const Vector& val) {

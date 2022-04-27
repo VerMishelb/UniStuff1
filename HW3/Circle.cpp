@@ -22,20 +22,20 @@ double Circle::getRadius() {
 }
 
 
-const Circle& Circle::operator+(const Circle& other) const {
+const Circle Circle::operator+(const Circle& other) const {
     return Circle(r + other.r);
 }
-const Circle& Circle::operator-(const Circle& other) const {
+const Circle Circle::operator-(const Circle& other) const {
     return Circle(r - other.r);
 }
 Circle& Circle::operator=(const double& other) {
     this->r = other;
     return *this;
 }
-const bool& Circle::operator>(const Circle& other) const {
+bool Circle::operator>(const Circle& other) const {
     return other < *this;
 }
-const bool& Circle::operator<(const Circle& other) const {
+bool Circle::operator<(const Circle& other) const {
     return r < other.r;
 }
 Circle::operator double() const {
