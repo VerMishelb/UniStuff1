@@ -30,11 +30,11 @@ const Complex Complex::operator/(const Complex& n2) const {
 	);
 }
 
-const bool Complex::operator>(const Complex& n2) const {
+bool Complex::operator>(const Complex& n2) const {
 	return Length() > n2.Length();
 }
 
-const bool Complex::operator<(const Complex& n2) const {
+bool Complex::operator<(const Complex& n2) const {
 	return Length() < n2.Length();
 }
 
