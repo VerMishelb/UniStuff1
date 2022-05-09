@@ -11,6 +11,8 @@ public:
 
 	void setAtHome(bool home);
 	bool isAtHome();
+	void setEthernet(bool connected);
+	bool getEthernet();
 
 private:
 	bool homePc{ true };

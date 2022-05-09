@@ -6,7 +6,7 @@ Screen::Screen(float size) : size(size) {}
 
 
 void Screen::setSize(float size) {
-	size = size;
+	this->size = size;
 }
 
 float Screen::getSize() {

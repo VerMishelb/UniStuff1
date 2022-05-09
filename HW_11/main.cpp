@@ -1,8 +1,21 @@
-﻿#include <iostream>
+#include <iostream>
+#include "Computer.h"
+#include "Laptop.h"
+#include "Phone.h"
 
-//2
+//4 Вариант
 
 int main() {
+	Phone phone{};
+	Computer pc{};
+	Laptop lp{};
 
-    return 0;
+	std::cout << "Phone:\n" << phone.getLang() << '\n'
+		<< phone.getLayout() << '\n'
+		<< phone.getOs() << "\n\nPC:\n"
+		<< pc.isAtHome() << '\n'
+		<< pc.getSize() << "\n\nLaptop:\n"
+		<< lp.getCharge() << '\n'
+		<< lp.getPowerState() << '\n';
+	return 0;
 }

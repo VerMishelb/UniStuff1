@@ -9,6 +9,9 @@ Phone::Phone() : Screen(3.5), Keyboard("EN"), os{ 0 }, supports5G(false) {
 
 void Phone::setOs(const char* os) {
 	strcpy_s(this->os, os);
+	if (this->os[63] != '\0') {
+		this->os[63] = 0;
+	}
 }
 
 char* Phone::getOs() {

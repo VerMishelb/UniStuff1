@@ -11,3 +11,11 @@ void Computer::setAtHome(bool home) {
 bool Computer::isAtHome() {
 	return homePc;
 }
+
+void Computer::setEthernet(bool connected) {
+	ethernet = connected;
+}
+
+bool Computer::getEthernet() {
+	return ethernet;
+}
