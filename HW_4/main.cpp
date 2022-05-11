@@ -1,6 +1,7 @@
 #include <iostream>
+#include "Equation.h"
 
 int main() {
-    std::cout << "Hello World!\n";
+    Equation::solve();
     return 0;
 }
